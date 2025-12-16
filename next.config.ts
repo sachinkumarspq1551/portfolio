@@ -1,7 +1,9 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',          // <-- IMPORTANT for static files
+  trailingSlash: true,       // <-- Required so routing works on Firebase
+
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -14,19 +16,19 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'placehold.co',
         port: '',
-        pathname: '/**',
+        pathname: '/',
       },
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
         port: '',
-        pathname: '/**',
+        pathname: '/',
       },
       {
         protocol: 'https',
         hostname: 'picsum.photos',
         port: '',
-        pathname: '/**',
+        pathname: '/',
       },
     ],
   },
